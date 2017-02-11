@@ -1,0 +1,3 @@
+== README
+
+One can use this application to keep track of his/hers contacts. Web-address:

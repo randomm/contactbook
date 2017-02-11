@@ -1,0 +1,32 @@
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+  | <%= link_to 'Edit', edit_user_path(@user) %>
+</p>
+
+
+
+<h2>Contacts</h2>
+<input type="text" id="search_word" onkeyup="search_for_names()" placeholder="Search by names..">
+<table id="contacts_table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Phone number</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @user.contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.name, contact_path(contact) %></td>
+        <td><%=contact.number%></td>
+        <td><%=contact.email%></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%=link_to "Add a new contact", new_contact_path%> | <%= link_to "Export my contacts as csv", export_csv_path(id: @user.id, format: "csv") %>
+
+
