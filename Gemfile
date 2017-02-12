@@ -36,6 +36,12 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'sqlite3'
+
+end
+
+group :test do
+  gem "capybara"
+  gem 'launchy'
 end
 
 group :development do
